@@ -1,0 +1,71 @@
+
+@theme {
+    /* COLORS */
+    --color-background: hsl(0 0% 100%);
+    --color-foreground: hsl(222.2 47.4% 11.2%);
+  
+    --color-muted: hsl(210 40% 96.1%);
+    --color-muted-foreground: hsl(215.4 16.3% 46.9%);
+  
+    --color-popover: hsl(0 0% 100%);
+    --color-popover-foreground: hsl(222.2 47.4% 11.2%);
+  
+    --color-card: hsl(0 0% 100%);
+    --color-card-foreground: hsl(222.2 47.4% 11.2%);
+  
+    --color-primary: hsl(222.2 47.4% 11.2%);
+    --color-primary-foreground: hsl(210 40% 98%);
+  
+    --color-secondary: hsl(210 40% 96.1%);
+    --color-secondary-foreground: hsl(222.2 47.4% 11.2%);
+  
+    --color-accent: hsl(210 40% 96.1%);
+    --color-accent-foreground: hsl(222.2 47.4% 11.2%);
+  
+    --color-destructive: hsl(0 100% 50%);
+    --color-destructive-foreground: hsl(210 40% 98%);
+  
+    --color-border: hsl(214.3 31.8% 91.4%);
+    --color-input: hsl(214.3 31.8% 91.4%);
+
+    --color-ring: hsl(215 20.2% 65.1%);
+    --color-ryan: red;
+  
+  
+    /* BORDER */
+    --radius-lg: 0.5rem;
+    --radius-md: calc(0.5rem - 2px);
+    --radius-sm: calc(0.5rem - 4px);
+  
+  
+    /* KEYFRAME AND ANIMATION */
+    --animate-caret-blink: caret-blink 1.25s ease-out infinite;
+    --animate-accordion-down: accordion-down 0.2s ease-out;
+    --animate-accordion-up: accordion-up 0.2s ease-out;
+  
+    @keyframes caret-blink {
+        0%, 70%, 100% {
+            opacity: 1;
+        }
+        20%, 50% {
+            opacity: 0;
+        }
+    }
+  
+    @keyframes accordion-down {
+        from {
+            height: 0;
+        }
+        to {
+            height: var(--radix-accordion-content-height);
+        }
+    }
+    @keyframes accordion-up {
+        from {
+            height: var(--radix-accordion-content-height);
+        }
+        to {
+            height: 0;
+        }
+    }
+}
