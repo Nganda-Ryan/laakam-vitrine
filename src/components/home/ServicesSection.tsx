@@ -51,7 +51,7 @@ export function ServicesSection() {
             key={index}
             description={service.description}
             icon={service.icon}
-            link={service.link}
+            link={service.link ? service.link : '#'}
             title={service.title}
            />
           ))}
