@@ -1,7 +1,5 @@
-"use client"
-
 import React from 'react'
-import { motion } from 'framer-motion'
+import TechStakCard from '../cards/TechStakCard'
 export function TechnologyStack() {
   const categories = [
     {
@@ -69,37 +67,11 @@ export function TechnologyStack() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {categories.map((category, index) => (
-            <motion.div
+            <TechStakCard
               key={index}
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.1,
-              }}
-              className="bg-background rounded-lg p-6 border border-border"
-            >
-              <h3 className="text-xl font-semibold mb-4">{category.title}</h3>
-              <div className="flex flex-wrap gap-2">
-                {category.technologies.map((tech, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
+              title={category.title}
+              technologies={category.technologies}
+            />
           ))}
         </div>
       </div>

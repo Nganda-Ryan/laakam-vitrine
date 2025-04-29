@@ -2,15 +2,16 @@ import React from 'react'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import Particule from '../animations/Particule'
+import Image from 'next/image'
 
 export function HeroSection() {
   
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-background">
+    <section className="relative w-full min-h-screen overflow-hidden bg-background">
       <Particule />
-      <div className="relative z-10 container mx-auto px-4 h-full flex items-center pt-16">
-        <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tighter mb-6">
+      <div className="relative flex items-center justify-between flex-col lg:flex-row  z-10 container mx-auto px-4 h-full pt-30 lg:pt-16">
+        <div className="max-w-3xl min-w-2/4">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tighter mb-6">
             Transforming Ideas into
             <span className="relative">
               <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
@@ -19,25 +20,37 @@ export function HeroSection() {
               <span className="absolute bottom-0 left-0 w-full h-3 bg-gradient-to-r from-blue-600/20 to-indigo-600/20 -z-10" />
             </span>
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl">
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl">
             We craft innovative software solutions that empower businesses to
             thrive in the digital landscape.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/contact"
-              className="px-8 py-3 bg-primary text-primary-foreground rounded-md hover:opacity-90 transition-opacity inline-flex items-center justify-center font-medium"
+              className="px-8 py-3 bg-primary text-primary-foreground rounded-md hover:opacity-90 transition-opacity flex flex-nowrap items-center justify-center font-medium"
             >
-              Get Started
+              <span className='text-nowrap'>Get Started</span>
+              
               <ArrowRight size={18} className="ml-2" />
             </Link>
             <Link
               href="/case-studies"
-              className="px-8 py-3 bg-accent text-accent-foreground rounded-md hover:bg-accent/80 transition-colors inline-flex items-center justify-center font-medium"
+              className="px-8 py-3 bg-accent text-accent-foreground rounded-md hover:bg-accent/80 transition-colors flex text-nowrap items-center justify-center font-medium"
             >
               View Our Work
             </Link>
           </div>
+        </div>
+
+        <div className='w-full mt-20'>
+          <Image
+            src="/images/charming-woman.jpg"
+            width={1000}
+            height={1000}
+            alt="woman"
+            className="s-mask max-w-2/3 md:max-w-xl h-auto mx-auto"
+          />
+
         </div>
       </div>
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">

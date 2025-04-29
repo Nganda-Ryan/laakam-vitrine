@@ -64,7 +64,7 @@ export function TechStackSection() {
                     width={400}
                   src={tech.url}
                   alt={`${tech.name} logo`}
-                  className="max-h-12 max-w-full object-contain transition-all duration-300 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
+                  className="max-h-12 max-w-full object-contain transition-all duration-300 sm:grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
                 />
               </div>
             </div>

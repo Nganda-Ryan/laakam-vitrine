@@ -25,7 +25,7 @@ export function Navbar() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="text-2xl font-bold tracking-tighter">
-            LAAKAM CLOUD
+            LAAKAM
           </Link>
           <div className="hidden lg:flex items-center space-x-8">
             <nav className="flex items-center space-x-6">
