@@ -23,7 +23,7 @@ interface ScrollAnimationProps {
     }, []);
   
     return (
-      <div  data-aos={animation} className=''>
+      <div  data-aos={animation} className='transition-all duration-300'>
         {children}
       </div >
     );

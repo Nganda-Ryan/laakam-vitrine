@@ -32,6 +32,15 @@ export interface PlanType {
     }[];
 }
 
+export interface ComplexeCaseStudyType {
+    title: string;
+    image: string;
+    description: string;
+    metrics: string[];
+    client: string;
+    link: string;
+}
+
   export type AOSAnimationSide =
   | "fade"
   | "fade-up"

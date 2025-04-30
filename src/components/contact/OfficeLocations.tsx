@@ -1,9 +1,8 @@
 "use client"
 
 import React from 'react'
-import { motion } from 'framer-motion'
-import { MapPin, Phone, Mail, Clock } from 'lucide-react'
-import Image from 'next/image'
+
+import OfficeCard from '../cards/OfficeCard'
 const offices = [
   {
     city: 'San Francisco',
@@ -36,27 +35,7 @@ const offices = [
       'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&q=80&w=1000',
   },
 ]
-const container = {
-  hidden: {
-    opacity: 0,
-  },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-}
-const item = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  show: {
-    opacity: 1,
-    y: 0,
-  },
-}
+
 export function OfficeLocations() {
   return (
     <section className="py-20 bg-accent/50">
@@ -69,66 +48,21 @@ export function OfficeLocations() {
             Find us in these locations around the world
           </p>
         </div>
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{
-            once: true,
-            margin: '-100px',
-          }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {offices.map((office, index) => (
-            <motion.div
+            <OfficeCard 
               key={index}
-              variants={item}
-              className="bg-background rounded-lg overflow-hidden border border-border hover:shadow-lg transition-shadow"
-            >
-              <div className="h-48 overflow-hidden">
-                <Image
-                    height={800}
-                    width={800}
-                    src={office.image}
-                    alt={`${office.city} office`}
-                    className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-1">{office.city}</h3>
-                <p className="text-primary mb-4">{office.country}</p>
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <MapPin className="w-5 h-5 mr-3 mt-1 text-primary" />
-                    <p className="text-muted-foreground">{office.address}</p>
-                  </div>
-                  <div className="flex items-start">
-                    <Phone className="w-5 h-5 mr-3 mt-1 text-primary" />
-                    <a
-                      href={`tel:${office.phone}`}
-                      className="text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      {office.phone}
-                    </a>
-                  </div>
-                  <div className="flex items-start">
-                    <Mail className="w-5 h-5 mr-3 mt-1 text-primary" />
-                    <a
-                      href={`mailto:${office.email}`}
-                      className="text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      {office.email}
-                    </a>
-                  </div>
-                  <div className="flex items-start">
-                    <Clock className="w-5 h-5 mr-3 mt-1 text-primary" />
-                    <p className="text-muted-foreground">{office.hours}</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+              city={office.city}
+              country={office.country}
+              address={office.address}
+              phone={office.phone}
+              email={office.email}
+              hours={office.hours}
+              image={office.image}
+            />
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   )

@@ -1,12 +1,11 @@
 import React from 'react'
-import { ArrowRight } from 'lucide-react'
-import Link from 'next/link'
-import Image from 'next/image'
+import { ComplexeCaseStudyType } from '@/types'
+import ComplexeCaseStudyCard from '../cards/ComplexeCaseStudyCard'
 interface CaseStudyGridProps {
   filter: string
 }
 export function CaseStudyGrid({ filter }: CaseStudyGridProps) {
-  const caseStudies = [
+  const caseStudies: ComplexeCaseStudyType [] = [
     {
       title: 'E-commerce Platform Redesign',
       category: 'web',
@@ -45,37 +44,15 @@ export function CaseStudyGrid({ filter }: CaseStudyGridProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {caseStudies.map((study, index) => (
-        <Link
+        <ComplexeCaseStudyCard
           key={index}
-          href={study.link}
-          className="group bg-background rounded-lg overflow-hidden border border-border hover:shadow-lg transition-all duration-300"
-        >
-          <div className="aspect-video overflow-hidden">
-            <Image
-                height={800}
-                width={800}
-                src={study.image}
-                alt={study.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-          </div>
-          <div className="p-6">
-            <h3 className="text-xl font-semibold mb-2">{study.title}</h3>
-            <p className="text-sm text-primary mb-4">{study.client}</p>
-            <p className="text-muted-foreground mb-4">{study.description}</p>
-            <div className="space-y-2 mb-6">
-              {study.metrics.map((metric, i) => (
-                <div key={i} className="text-sm text-foreground/80">
-                  • {metric}
-                </div>
-              ))}
-            </div>
-            <div className="flex items-center text-primary font-medium">
-              View Case Study{' '}
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </div>
-          </div>
-        </Link>
+          title={study.title}
+          image={study.image}
+          description={study.description}
+          metrics={study.metrics}
+          client={study.client}
+          link={study.link}
+        />
       ))}
     </div>
   )
