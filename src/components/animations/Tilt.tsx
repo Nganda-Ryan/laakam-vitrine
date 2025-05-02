@@ -31,7 +31,7 @@ const Tilt = ({ children } : TiltProps) => {
         };
       }, []);
   return (
-    <span ref={tiltRef} className='w-full'>
+    <span ref={tiltRef} className='w-full h-full transition-all duration-300'>
         { children }
     </span>
   )

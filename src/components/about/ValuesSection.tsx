@@ -1,5 +1,6 @@
 import React from 'react'
 import { Trophy, Heart, Lightbulb, Users, Shield, Rocket } from 'lucide-react'
+import SimpleCoreValueCard from '../cards/SimpleCoreValueCard'
 export function ValuesSection() {
   const values = [
     {
@@ -52,14 +53,12 @@ export function ValuesSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {values.map((value, index) => (
-            <div
+            <SimpleCoreValueCard
               key={index}
-              className="bg-background p-8 rounded-xl border border-border hover:shadow-lg transition-shadow"
-            >
-              <div className="mb-4">{value.icon}</div>
-              <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
-              <p className="text-muted-foreground">{value.description}</p>
-            </div>
+              description={value.description}
+              icon={value.icon}
+              title={value.title}
+            />
           ))}
         </div>
       </div>

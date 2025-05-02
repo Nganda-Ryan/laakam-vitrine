@@ -13,6 +13,17 @@ export interface CaseStudyCardType {
     link: string;
 }
 
+
+export interface ComplexeCaseStudyProps {
+    title: string;
+    image: string;
+    description: string;
+    metrics: string[];
+    client: string;
+    link: string;
+}
+
+
 export interface PlanCardProps {
     name: string;
     description: string;
@@ -49,4 +60,43 @@ export interface MetricCardProps {
     label: string
     description: string
     icon: React.JSX.Element
+}
+
+export interface SimpleCoreValueCardProps {
+    icon: React.JSX.Element
+    title: string
+    description: string
+}
+
+export interface MileStoneCardProps {
+    year: string
+    title: string
+    description: string
+    index: number
+}
+
+export interface TeamMemberCardProps {
+    name: string
+    role: string
+    image: string
+    bio: string
+    linkedin: string
+    twitter: string
+    email: string
+}
+
+export interface CertificationCardProps {
+    name: string
+    image: string
+    year: string
+}
+
+export interface OfficeCardProps {
+    city: string
+    country: string
+    address: string
+    phone: string
+    email: string
+    hours: string
+    image: string
 }
